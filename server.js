@@ -10,17 +10,17 @@ app.use(express.json());
 // app.use("/", index);
 
 app.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname, "/index.html"));
+  res.send("hello world");
 });
 
-db.sequelize
-  .sync({ force: true })
-  .then(() => {
-    console.log("Synced and connected db.");
-  })
-  .catch((err) => {
-    console.log("Failed to sync db: " + err.message);
-  });
+// db.sequelize
+//   .sync({ force: true })
+//   .then(() => {
+//     console.log("Synced and connected db.");
+//   })
+//   .catch((err) => {
+//     console.log("Failed to sync db: " + err.message);
+//   });
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
