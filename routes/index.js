@@ -1,14 +1,8 @@
-const express = require("express");
-const router = express.Router();
+var router = require("express").Router();
 
-const employeeController = require("../controllers/employee.controller");
-const categoryController = require("../controllers/category.controller");
-const comboController = require("../controllers/combo.controller");
-const invoiceController = require("../controllers/invoice.controller");
-const menuController = require("../controllers/menu.controller");
+router.use("/api", require("./api"));
 
-router.get("/api/employee", employeeController.findAll);
-router.post("/api/employee/create", employeeController.create);
+module.exports = router;
 
 // router.get("/api/category", categoryController.findAll);
 // router.post("/api/category/create", categoryController.create);

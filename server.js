@@ -9,18 +9,19 @@ app.use(express.json());
 
 // app.use("/", index);
 
-app.get("/", function (req, res) {
-  res.send("hello world");
-});
+app.use(cors());
+app.use(express.static(__dirname + "/public"));
 
-// db.sequelize
-//   .sync({ force: true })
-//   .then(() => {
-//     console.log("Synced and connected db.");
-//   })
-//   .catch((err) => {
-//     console.log("Failed to sync db: " + err.message);
-//   });
+app.use(require("./routes"));
+
+db.sequelize
+  .sync({ force: true })
+  .then(() => {
+    console.log("Synced and connected db.");
+  })
+  .catch((err) => {
+    console.log("Failed to sync db: " + err.message);
+  });
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
