@@ -1,4 +1,5 @@
-var router = require("express").Router();
+const express = require("express");
+var router = express.Router();
 
 router.use("/api", require("./api"));
 
@@ -15,5 +16,3 @@ module.exports = router;
 
 // router.get("/api/menu", menuController.findAll);
 // router.post("/api/menu/create", menuController.create);
-
-module.exports = router;
