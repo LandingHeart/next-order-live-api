@@ -9,12 +9,10 @@ const db = require("./models");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
-
+// app.use("/api", index);
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "/index.html"));
 });
-
-app.use("/api", index);
 
 // db.sequelize
 //   .sync({ force: true })
