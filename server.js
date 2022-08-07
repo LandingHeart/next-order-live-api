@@ -1,6 +1,4 @@
-const logger = require("morgan");
 const express = require("express");
-const cookieParser = require("cookie-parser");
 const app = express();
 const path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, "./configs/.env") });
@@ -8,10 +6,8 @@ const index = require("./routes/index");
 const PORT = process.env.PORT || 8080;
 const db = require("./models");
 
-app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
 app.use(express.static(__dirname + "/public"));
 
 app.get("/", function (req, res) {
