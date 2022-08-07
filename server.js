@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 8080;
 const db = require("./models");
 app.use(express.json());
 
-app.use("/", index);
+// app.use("/", index);
 
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "/index.html"));
