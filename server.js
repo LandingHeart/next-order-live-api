@@ -20,14 +20,14 @@ app.get("/", function (req, res) {
 
 app.use("/api", index);
 
-db.sequelize
-  .sync({ force: true })
-  .then(() => {
-    console.log("Synced and connected db.");
-  })
-  .catch((err) => {
-    console.log("Failed to sync db: " + err.message);
-  });
+// db.sequelize
+//   .sync({ force: true })
+//   .then(() => {
+//     console.log("Synced and connected db.");
+//   })
+//   .catch((err) => {
+//     console.log("Failed to sync db: " + err.message);
+//   });
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
