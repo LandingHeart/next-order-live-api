@@ -2,12 +2,10 @@ const express = require("express");
 const app = express();
 const path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, "./configs/.env") });
-const index = require("./routes/index");
+
 const PORT = process.env.PORT || 8080;
-const db = require("./models");
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 // app.use(express.static(__dirname + "/public"));
 // app.use("/api", index);
 app.get("/", function (req, res) {
