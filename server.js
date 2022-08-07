@@ -9,9 +9,9 @@ app.use(express.json());
 
 app.use("/", index);
 
-app.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname, "/index.html"));
-});
+// app.get("/", function (req, res) {
+//   res.sendFile(path.join(__dirname, "/index.html"));
+// });
 
 db.sequelize
   .sync({ force: true })
